@@ -1,6 +1,6 @@
 [project]
 name = "comfyui-vulca"
-version = "0.5.0"
+version = "0.7.0"
 description = "VULCA cultural art evaluation nodes for ComfyUI — L1-L5 scoring, Brief-driven creative workflows"
 readme = "README.md"
 requires-python = ">=3.10"

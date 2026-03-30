@@ -1,12 +1,12 @@
 [project]
 name = "comfyui-vulca"
-version = "0.7.0"
-description = "VULCA cultural art evaluation nodes for ComfyUI — L1-L5 scoring, Brief-driven creative workflows"
+version = "0.9.0"
+description = "VULCA cultural art evaluation nodes for ComfyUI — L1-L5 scoring, Layered Generation, Inpainting, Brief-driven creative workflows"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "Apache-2.0"}
 authors = [{name = "Yu Haorui", email = "yuhaorui48@gmail.com"}]
-dependencies = ["vulca>=0.7.0"]
+dependencies = ["vulca>=0.9.0"]
 
 [project.urls]
 Homepage = "https://github.com/vulca-org/comfyui-vulca"

@@ -11,11 +11,17 @@ Cultural art evaluation and Brief-driven creative workflows for ComfyUI.
 | **VULCA Generate** | Generate artwork from a Brief |
 | **VULCA Evaluate** | L1-L5 cultural evaluation |
 | **VULCA Update** | Update Brief with natural language |
+| **VULCA Inpaint (Region)** | Inpaint a region of an image guided by a tradition and NL instruction |
+| **VULCA Layers (Analyze)** | Analyze the layer structure of an artwork and return JSON |
+| **VULCA Layers (Composite)** | Composite layered artwork from an artwork directory manifest |
+| **VULCA Evolution** | Check evolution weights and digestion status |
+| **VULCA Traditions** | List available cultural traditions |
+| **VULCA Layers (Export)** | Export layers to PSD/PNG with manifest |
 
 ## Installation
 
 1. Copy this folder to `ComfyUI/custom_nodes/comfyui-vulca/`
-2. Install dependency: `pip install vulca>=0.7.0`
+2. Install dependency: `pip install vulca>=0.9.0`
 3. Restart ComfyUI
 
 ## Usage
@@ -30,5 +36,5 @@ VULCA Brief → VULCA Concept → VULCA Generate → VULCA Evaluate
 ## Requirements
 
 - Python 3.10+
-- `vulca>=0.7.0` (PyPI)
+- `vulca>=0.9.0` (PyPI)
 - ComfyUI (any recent version)

@@ -109,4 +109,4 @@ node change. See [RELEASING.md](RELEASING.md) for the release gate.
 
 ## License
 
-Apache-2.0
+[Apache License 2.0](LICENSE)

@@ -36,3 +36,13 @@ def test_package_and_manager_metadata_agree() -> None:
     assert manager["reference"] == repository_url
     assert manager["files"] == [repository_url]
     assert manager["install_type"] == "git-clone"
+
+
+def test_declared_apache_license_has_distribution_text() -> None:
+    project = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))["project"]
+    license_text = (ROOT / "LICENSE").read_text(encoding="utf-8")
+
+    assert project["license"] == {"text": "Apache-2.0"}
+    assert "Apache License" in license_text
+    assert "Version 2.0, January 2004" in license_text
+    assert "TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION" in license_text

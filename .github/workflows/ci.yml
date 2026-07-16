@@ -41,3 +41,27 @@ jobs:
 
       - name: Run tests
         run: python -m pytest -q
+
+  minimum-sdk:
+    name: minimum SDK compatibility
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6.0.3
+
+      - name: Setup Python
+        uses: actions/setup-python@v6.2.0
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Install test dependencies and minimum SDK
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pytest tomli
+          python -c "import subprocess, sys, tomli; from pathlib import Path; dependency = tomli.loads(Path('pyproject.toml').read_text(encoding='utf-8'))['project']['dependencies'][0]; package, minimum = dependency.split('>=', 1); subprocess.check_call([sys.executable, '-m', 'pip', 'install', f'{package}=={minimum}'])"
+
+      - name: Run tests against minimum SDK
+        run: python -m pytest -q

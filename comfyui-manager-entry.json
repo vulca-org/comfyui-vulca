@@ -1,7 +1,7 @@
 {
     "title": "ComfyUI-VULCA",
-    "reference": "https://github.com/vulca-org/comfyui-vulca",
-    "files": ["https://github.com/vulca-org/comfyui-vulca"],
+    "reference": "https://github.com/vulca-org/vulca-comfyui-visual-nodes",
+    "files": ["https://github.com/vulca-org/vulca-comfyui-visual-nodes"],
     "install_type": "git-clone",
     "description": "Cultural art evaluation nodes — L1-L5 scoring across 13 traditions, Layered Generation + Inpainting, Brief-driven creative workflows. Evaluate AI-generated art for cultural accuracy and get actionable improvement suggestions. Requires: pip install vulca",
     "author": "yhryzy",

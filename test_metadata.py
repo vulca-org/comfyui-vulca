@@ -14,7 +14,7 @@ except ModuleNotFoundError:  # pragma: no cover - Python 3.10 compatibility
 
 ROOT = Path(__file__).resolve().parent
 SEMVER = re.compile(r"\d+\.\d+\.\d+")
-VULCA_DEPENDENCY = re.compile(r"vulca>=\d+\.\d+\.\d+")
+VULCA_DEPENDENCY = re.compile(r"vulca>=(?P<minimum>\d+\.\d+\.\d+)")
 
 
 def test_package_and_manager_metadata_agree() -> None:
@@ -25,7 +25,11 @@ def test_package_and_manager_metadata_agree() -> None:
     assert SEMVER.fullmatch(project["version"])
     assert project["requires-python"] == ">=3.10"
     assert len(project["dependencies"]) == 1
-    assert VULCA_DEPENDENCY.fullmatch(project["dependencies"][0])
+    dependency = VULCA_DEPENDENCY.fullmatch(project["dependencies"][0])
+    assert dependency is not None
+
+    # The custom-node release line is independent from the Vulca SDK floor.
+    assert project["version"] != dependency.group("minimum")
 
     repository_url = project["urls"]["Repository"]
     assert project["urls"]["Homepage"] == repository_url

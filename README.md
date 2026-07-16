@@ -37,7 +37,7 @@ git clone https://github.com/vulca-org/comfyui-vulca
 
 Install dependency:
 ```bash
-pip install vulca>=0.11.0
+pip install "vulca>=0.12.0"
 ```
 
 Restart ComfyUI.
@@ -80,10 +80,21 @@ Restart ComfyUI.
 ## Requirements
 
 - Python 3.10+
-- `vulca>=0.11.0` ([PyPI](https://pypi.org/project/vulca/))
+- `vulca>=0.12.0` ([PyPI](https://pypi.org/project/vulca/))
 - ComfyUI (tested with latest stable)
 
 For real VLM evaluation: `export GOOGLE_API_KEY=your-key`. Mock mode works without API keys.
+
+## Versioning
+
+The ComfyUI custom node and the Vulca SDK use independent SemVer release lines:
+
+- `project.version` in `pyproject.toml` versions changes to this custom node.
+- The `vulca>=...` dependency is the oldest SDK version verified by compatibility CI.
+
+An SDK release does not by itself require a matching custom-node version. Raise the SDK minimum
+only when node code requires a newer SDK API; choose the custom-node version from the impact of the
+node change. See [RELEASING.md](RELEASING.md) for the release gate.
 
 ## Citation
 

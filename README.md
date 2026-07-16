@@ -30,7 +30,7 @@ Cultural art evaluation and Brief-driven creation nodes for ComfyUI. Score any g
 ```bash
 # Option 1: Clone into custom_nodes
 cd ComfyUI/custom_nodes/
-git clone https://github.com/vulca-org/comfyui-vulca
+git clone https://github.com/vulca-org/vulca-comfyui-visual-nodes
 
 # Option 2: ComfyUI Manager (search "VULCA")
 ```
